@@ -13,5 +13,3 @@ def get_mask_account() -> str:
     return number_mask
 
 
-print(get_mask_card_number())
-print(get_mask_account())
