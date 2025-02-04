@@ -17,5 +17,6 @@ def get_mask_account(number: str) -> str:
     number_mask = "**" + number[-4:]
     return number_mask
 
+
 n = input()
 print(get_mask_card_number(n))
