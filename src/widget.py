@@ -7,11 +7,11 @@ def masc_account_card(number: str) -> str:
         number_mask = number[0:4] + " " + "**" + score_number[-4:]
         return number_mask
     else:
-        for i in range(len(number)):
-            if number[i].isalpha() or number[i] == " ":
-                name_card += number[i]
+        for num in range(len(number)):
+            if number[num].isalpha() or number[num] == " ":
+                name_card += number[num]
             else:
-                card_number += number[i]
+                card_number += number[num]
 
         correct_number = card_number[0:7] + card_number[7:14] + card_number[14:19]
         number_mask = (
@@ -34,5 +34,3 @@ def get_date(date: str) -> str:
     """Функция принимает на вход строку и отдает корректный результат в формате 11.07.2018."""
     correct_date = date[8:10] + "." + date[5:7] + "." + date[0:4]
     return correct_date
-
-
