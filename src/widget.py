@@ -36,5 +36,3 @@ def get_date(date: str) -> str:
     return correct_date
 
 
-n = input()
-print(masc_account_card(n))

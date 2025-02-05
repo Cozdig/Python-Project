@@ -16,7 +16,3 @@ def get_mask_account(number: str) -> str:
     """Функция принимает на вход номер счета и возвращает его маску, номер счета замаскирован."""
     number_mask = "**" + number[-4:]
     return number_mask
-
-
-n = input()
-print(get_mask_card_number(n))
