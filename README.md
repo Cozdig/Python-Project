@@ -8,7 +8,7 @@
 
 1. Клонируйте репозиторий:
 ```
-git clone git@github.com:Cozdig/PythonProject2.git
+git clone https://github.com/Cozdig/Python-Project.git
 ```
 2. Установите зависимости:
 ```
