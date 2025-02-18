@@ -13,7 +13,9 @@ def get_mask_card_number(number: str) -> str:
             else:
                 card_number += number[num]
         correct_number = card_number[0:7] + card_number[7:14] + card_number[14:19]
-        number_mask = correct_number[0:4] + " " + correct_number[4:6] + "**" + " " + "****" + " " + correct_number[12:16]
+        number_mask = (
+            correct_number[0:4] + " " + correct_number[4:6] + "**" + " " + "****" + " " + correct_number[12:16]
+        )
         return number_mask
 
 
