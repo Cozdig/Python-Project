@@ -1,5 +1,7 @@
 import pytest
 
+from src.decorators import log
+
 
 @pytest.fixture
 def test():
@@ -52,3 +54,23 @@ def transactions():
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@log(filename="")
+def test_1(x):
+    return x + x
+
+
+@log(filename="")
+def test_2(x, y):
+    return x + y
+
+
+@log(filename="log_test")
+def test_3(x):
+    return x + x
+
+
+@log(filename="error_test")
+def test_4(x, y):
+    return x + y
