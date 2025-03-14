@@ -1,4 +1,12 @@
 import json
+import logging
+
+logger = logging.getLogger("utils")
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler("../Python-Project/logs/utils.log", encoding="utf-8", mode="w")
+file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
 
 
 def json_transactions(way):
@@ -8,8 +16,14 @@ def json_transactions(way):
         with open(way, encoding="utf-8") as f:
             data = json.load(f)
             if data == "" or type(data) != list:
+                logger.critical("Неправильный формат JSON-файла")
                 return []
             else:
+                logger.info(f"Функция закончила выполнение со значениями: {data}")
                 return data
-    except Exception:
+    except Exception as ex:
+        logger.critical(f"Ошибка. Тип ошибки:  {ex}")
         return []
+
+
+#json_transactions(r"..\\data\\operations.json")
