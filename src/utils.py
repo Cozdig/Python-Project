@@ -26,4 +26,4 @@ def json_transactions(way):
         return []
 
 
-#json_transactions(r"..\\data\\operations.json")
+json_transactions(r"../Python-Project/data/operations.json")
