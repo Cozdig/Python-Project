@@ -47,5 +47,5 @@ def get_mask_account(number: str) -> str:
         return number_mask
 
 
-get_mask_account("14234354436141345")
-get_mask_card_number("112222333344455")
+# get_mask_account("14234354436141345")
+# get_mask_card_number("112222333344455")

@@ -1,31 +1,23 @@
 def filter_by_currency(transactions, currency):
-    """Эта функция принимает на вход список транзакций и возвращает итератор,
-    который поочередно выдает транзакции, где валюта операции соответствует заданной (например, USD)."""
-    filtered_transactions = filter(
-        lambda transaction: transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency,
-        transactions,
+    """Возвращает итератор с транзакциями, где валюта соответствует заданной."""
+    return filter(
+        lambda transaction: transaction.get("operationAmount", {}).get("currency", {}).get("code") == currency
+        or transaction.get("currency_code") == currency,
+        transactions
     )
-    for sort in filtered_transactions:
-        yield sort
-
 
 def transaction_descriptions(transactions):
-    """Эта функция принимет на вход список транзакций и выдает описание каждой по очереди."""
+    """Генерирует описания транзакций."""
     for tran in transactions:
-        if tran == {}:
-            pass
-        else:
+        if tran:  # Проверка на пустой словарь
             yield tran.get("description")
 
-
 def card_number_generator(start, last):
-    """Эта функция принимает на вход начальное и конечное значение номра карты,
-    чтобы сгенерировать несколько номеров карт в зависимости от указанного диапазона."""
-
+    """Генерирует номера карт в заданном диапазоне."""
     def format_card_number(number):
-        """Эта функция выполняет форматирование номера карты, чтобы он соответствовал стандартному формату."""
+        """Форматирует номер карты в стандартный формат XXXX XXXX XXXX XXXX."""
         string = f"{number:016}"
-        return " ".join([string[i : i + 4] for i in range(0, len(string), 4)])
+        return " ".join([string[i:i + 4] for i in range(0, len(string), 4)])
 
     while start <= last:
         yield format_card_number(start)
