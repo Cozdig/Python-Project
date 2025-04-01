@@ -43,7 +43,7 @@ def mask_account_card(number: str) -> str:
 
 def get_date(date: str) -> str:
     """Функция принимает на вход строку и отдает корректный результат в формате 11.07.2018."""
-    if len(date) != 26:
+    if len(date) > 26:
         return "Error"
     else:
         correct_date = date[8:10] + "." + date[5:7] + "." + date[0:4]

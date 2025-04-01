@@ -14,6 +14,7 @@ def transactions(file):
     except Exception as e:
         return f"Ошибка: {e}"
 
+
 def transactions_excel(file):
     """Читает Excel-файл и возвращает список транзакций."""
     try:
@@ -23,7 +24,6 @@ def transactions_excel(file):
         return "Файл не найден"
     except Exception as e:
         return f"Ошибка: {e}"
-
 
 
 # print(transactions("..\\data\\transactions.csv"))
